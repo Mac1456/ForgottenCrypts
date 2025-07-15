@@ -246,7 +246,7 @@ func _on_player_disconnected(id: int):
 	update_lobby_display()
 
 func _on_game_state_changed(new_state: GameManager.GameState):
-	print("Game state changed to: ", GameManager.GameState.keys()[new_state])
+	print("Game state changed to: ", GameManager.GameState.find_key(new_state))
 
 # UI helper functions
 func show_lobby():
@@ -267,8 +267,20 @@ func update_lobby_display():
 	
 	# Add players to list
 	var players = NetworkManager.get_all_players()
+	if players.is_empty():
+		print("No players found for lobby display")
+		return
+	
 	for player_id in players:
+		if not players.has(player_id):
+			print("Player ID not found in players dictionary: ", player_id)
+			continue
+			
 		var player_data = players[player_id]
+		if not player_data:
+			print("Player data is null for player ID: ", player_id)
+			continue
+			
 		var player_label = Label.new()
 		
 		var status_text = ""
@@ -279,7 +291,8 @@ func update_lobby_display():
 		if not player_data.get("character_type", "").is_empty():
 			character_text = " (" + player_data["character_type"] + ")"
 		
-		player_label.text = player_data["name"] + character_text + status_text
+		var player_name = player_data.get("name", "Unknown Player")
+		player_label.text = player_name + character_text + status_text
 		player_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		player_list.add_child(player_label)
 	

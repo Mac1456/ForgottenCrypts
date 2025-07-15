@@ -27,29 +27,21 @@ func _ready():
 			print("✅ File exists")
 		
 		# Test 2: Try to load the script
-		var script = null
-		try:
-			script = load(script_path)
-			if script:
-				print("✅ Script loaded successfully")
-			else:
-				print("❌ FAIL: Script load returned null")
-				continue
-		except:
-			print("❌ FAIL: Exception loading script")
+		var script = load(script_path)
+		if script:
+			print("✅ Script loaded successfully")
+		else:
+			print("❌ FAIL: Script load returned null")
 			continue
 		
 		# Test 3: Try to create an instance
-		try:
-			var instance = script.new()
-			if instance:
-				print("✅ Script instantiated successfully")
-				# Clean up
-				instance.queue_free()
-			else:
-				print("❌ FAIL: Script instantiation returned null")
-		except:
-			print("❌ FAIL: Exception instantiating script")
+		var instance = script.new()
+		if instance:
+			print("✅ Script instantiated successfully")
+			# Clean up
+			instance.queue_free()
+		else:
+			print("❌ FAIL: Script instantiation returned null")
 	
 	print("\n=== COMPILATION CHECK ===")
 	print("If you see this message, all autoload scripts can be loaded individually.")

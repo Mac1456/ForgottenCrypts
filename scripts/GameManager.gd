@@ -96,7 +96,7 @@ func set_game_state(new_state: GameState):
 	if current_state != new_state:
 		var old_state = current_state
 		current_state = new_state
-		print("Game state changed: ", GameState.keys()[old_state], " -> ", GameState.keys()[new_state])
+		print("Game state changed: ", GameState.find_key(old_state), " -> ", GameState.find_key(new_state))
 		game_state_changed.emit(new_state)
 
 # Start a new run

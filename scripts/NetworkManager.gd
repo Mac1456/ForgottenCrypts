@@ -244,7 +244,16 @@ func all_players_ready() -> bool:
 	
 	var ready_count = 0
 	for player_id in players:
-		if players[player_id]["ready"]:
+		if not players.has(player_id):
+			print("Player ID not found in dictionary: ", player_id)
+			continue
+			
+		var player_data = players[player_id]
+		if not player_data:
+			print("Player data is null for player ID: ", player_id)
+			continue
+			
+		if player_data.get("ready", false):
 			ready_count += 1
 		else:
 			print("Player ", player_id, " is not ready")
