@@ -1,0 +1,211 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl0n4s5qjm8gx"]
+
+[ext_resource type="Script" path="res://scripts/ui/ProgressionUI.gd" id="1_progression_script"]
+
+[node name="ProgressionUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_progression_script")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+
+[node name="Title" type="Label" parent="MainContainer"]
+layout_mode = 2
+text = "CHARACTER PROGRESSION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer"]
+layout_mode = 2
+
+[node name="ContentContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CharacterList" type="VBoxContainer" parent="MainContainer/ContentContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterTitle" type="Label" parent="MainContainer/ContentContainer/CharacterList"]
+layout_mode = 2
+text = "SELECT CHARACTER"
+horizontal_alignment = 1
+
+[node name="CharacterButtons" type="VBoxContainer" parent="MainContainer/ContentContainer/CharacterList"]
+layout_mode = 2
+
+[node name="WizardButton" type="Button" parent="MainContainer/ContentContainer/CharacterList/CharacterButtons"]
+layout_mode = 2
+text = "Wizard (Level 1)"
+
+[node name="BarbarianButton" type="Button" parent="MainContainer/ContentContainer/CharacterList/CharacterButtons"]
+layout_mode = 2
+text = "Barbarian (Level 1)"
+
+[node name="RogueButton" type="Button" parent="MainContainer/ContentContainer/CharacterList/CharacterButtons"]
+layout_mode = 2
+text = "Rogue (Level 1)"
+
+[node name="KnightButton" type="Button" parent="MainContainer/ContentContainer/CharacterList/CharacterButtons"]
+layout_mode = 2
+text = "Knight (Level 1)"
+
+[node name="VSeparator" type="VSeparator" parent="MainContainer/ContentContainer"]
+layout_mode = 2
+
+[node name="DetailsContainer" type="VBoxContainer" parent="MainContainer/ContentContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterDetails" type="VBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer"]
+layout_mode = 2
+
+[node name="CharacterName" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails"]
+layout_mode = 2
+text = "Select a character"
+horizontal_alignment = 1
+
+[node name="CharacterStats" type="VBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/CharacterStats"]
+layout_mode = 2
+text = "Health: 100"
+
+[node name="AttackLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/CharacterStats"]
+layout_mode = 2
+text = "Attack: 50"
+
+[node name="SpeedLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/CharacterStats"]
+layout_mode = 2
+text = "Speed: 100"
+
+[node name="ManaLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/CharacterStats"]
+layout_mode = 2
+text = "Mana: 80"
+
+[node name="ExperienceInfo" type="VBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/ExperienceInfo"]
+layout_mode = 2
+text = "Level: 1"
+
+[node name="ExperienceLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/ExperienceInfo"]
+layout_mode = 2
+text = "Experience: 0 / 100"
+
+[node name="ExperienceBar" type="ProgressBar" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/ExperienceInfo"]
+layout_mode = 2
+max_value = 100.0
+value = 0.0
+
+[node name="SkillPointsLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/CharacterDetails/ExperienceInfo"]
+layout_mode = 2
+text = "Skill Points: 0"
+
+[node name="HSeparator2" type="HSeparator" parent="MainContainer/ContentContainer/DetailsContainer"]
+layout_mode = 2
+
+[node name="UpgradeSection" type="VBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="UpgradeTitle" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection"]
+layout_mode = 2
+text = "UPGRADES"
+horizontal_alignment = 1
+
+[node name="UpgradesList" type="VBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection"]
+layout_mode = 2
+
+[node name="HealthUpgrade" type="HBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList"]
+layout_mode = 2
+
+[node name="HealthUpgradeLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/HealthUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Health Boost (+10 HP)"
+
+[node name="HealthUpgradeButton" type="Button" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/HealthUpgrade"]
+layout_mode = 2
+text = "Upgrade (1 SP)"
+
+[node name="AttackUpgrade" type="HBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList"]
+layout_mode = 2
+
+[node name="AttackUpgradeLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/AttackUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack Boost (+5 ATK)"
+
+[node name="AttackUpgradeButton" type="Button" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/AttackUpgrade"]
+layout_mode = 2
+text = "Upgrade (1 SP)"
+
+[node name="SpeedUpgrade" type="HBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList"]
+layout_mode = 2
+
+[node name="SpeedUpgradeLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/SpeedUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Speed Boost (+5 SPD)"
+
+[node name="SpeedUpgradeButton" type="Button" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/SpeedUpgrade"]
+layout_mode = 2
+text = "Upgrade (1 SP)"
+
+[node name="ManaUpgrade" type="HBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList"]
+layout_mode = 2
+
+[node name="ManaUpgradeLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/ManaUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mana Boost (+10 MP)"
+
+[node name="ManaUpgradeButton" type="Button" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/ManaUpgrade"]
+layout_mode = 2
+text = "Upgrade (1 SP)"
+
+[node name="AbilityUpgrade" type="HBoxContainer" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList"]
+layout_mode = 2
+
+[node name="AbilityUpgradeLabel" type="Label" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/AbilityUpgrade"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Unlock Third Ability"
+
+[node name="AbilityUpgradeButton" type="Button" parent="MainContainer/ContentContainer/DetailsContainer/UpgradeSection/UpgradesList/AbilityUpgrade"]
+layout_mode = 2
+text = "Unlock (3 SP)"
+
+[node name="HSeparator3" type="HSeparator" parent="MainContainer"]
+layout_mode = 2
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MainContainer/ButtonContainer"]
+layout_mode = 2
+text = "Back to Main Menu"
+
+[node name="PlayButton" type="Button" parent="MainContainer/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Continue Playing" 

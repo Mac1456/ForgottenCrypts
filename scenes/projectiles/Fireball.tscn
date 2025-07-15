@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqfaobfmafvjp"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/Fireball.gd" id="1_fireball"]
+
+[node name="Fireball" type="RigidBody2D"]
+script = ExtResource("1_fireball")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.4, 0.1, 1)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AreaCollision" type="CollisionShape2D" parent="Area2D"]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_visibility_notifier_2d_screen_exited"] 

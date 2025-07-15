@@ -1,0 +1,190 @@
+[gd_scene load_steps=3 format=3 uid="uid://b42j3vwobm5l0"]
+
+[ext_resource type="Script" uid="uid://gng3c8j43qyu" path="res://scripts/MainMenu.gd" id="1_0p5y7"]
+[ext_resource type="Texture2D" uid="uid://51ae5q3snn2a" path="res://assets/backgrounds/background.png" id="2_5r8cg"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0p5y7")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5r8cg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CRYPTS OF THE FORGOTTEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "A Multiplayer Dungeon Crawler"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer1" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HostGameButton" type="Button" parent="VBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "HOST GAME"
+
+[node name="JoinGameButton" type="Button" parent="VBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "JOIN GAME"
+
+[node name="SinglePlayerButton" type="Button" parent="VBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "SINGLE PLAYER"
+
+[node name="ProgressionButton" type="Button" parent="VBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "CHARACTER PROGRESSION"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/MenuButtons"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "QUIT"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="NetworkStatus" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Not Connected"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JoinGameDialog" type="AcceptDialog" parent="."]
+title = "Join Game"
+initial_position = 2
+size = Vector2i(400, 200)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="JoinGameDialog"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -49.0
+
+[node name="Label" type="Label" parent="JoinGameDialog/VBoxContainer"]
+layout_mode = 2
+text = "Enter server IP address:"
+
+[node name="IPInput" type="LineEdit" parent="JoinGameDialog/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "127.0.0.1"
+
+[node name="ConnectButton" type="Button" parent="JoinGameDialog/VBoxContainer"]
+layout_mode = 2
+text = "Connect"
+
+[node name="StatusLabel" type="Label" parent="JoinGameDialog/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="LobbyPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LobbyPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyTitle" type="Label" parent="LobbyPanel/VBoxContainer"]
+layout_mode = 2
+text = "Game Lobby"
+horizontal_alignment = 1
+
+[node name="PlayerList" type="VBoxContainer" parent="LobbyPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LobbyButtons" type="HBoxContainer" parent="LobbyPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CharacterSelectButton" type="Button" parent="LobbyPanel/VBoxContainer/LobbyButtons"]
+layout_mode = 2
+text = "Select Character"
+
+[node name="ReadyButton" type="Button" parent="LobbyPanel/VBoxContainer/LobbyButtons"]
+layout_mode = 2
+text = "Ready"
+
+[node name="StartGameButton" type="Button" parent="LobbyPanel/VBoxContainer/LobbyButtons"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="LeaveLobbyButton" type="Button" parent="LobbyPanel/VBoxContainer/LobbyButtons"]
+layout_mode = 2
+text = "Leave Lobby"
+
+[connection signal="pressed" from="VBoxContainer/MenuButtons/HostGameButton" to="." method="_on_host_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButtons/JoinGameButton" to="." method="_on_join_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButtons/SinglePlayerButton" to="." method="_on_single_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButtons/ProgressionButton" to="." method="_on_progression_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MenuButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="JoinGameDialog/VBoxContainer/ConnectButton" to="." method="_on_connect_button_pressed"]
+[connection signal="pressed" from="LobbyPanel/VBoxContainer/LobbyButtons/CharacterSelectButton" to="." method="_on_character_select_button_pressed"]
+[connection signal="pressed" from="LobbyPanel/VBoxContainer/LobbyButtons/ReadyButton" to="." method="_on_ready_button_pressed"]
+[connection signal="pressed" from="LobbyPanel/VBoxContainer/LobbyButtons/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="LobbyPanel/VBoxContainer/LobbyButtons/LeaveLobbyButton" to="." method="_on_leave_lobby_button_pressed"]

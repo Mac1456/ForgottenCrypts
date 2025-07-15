@@ -1,0 +1,32 @@
+{
+    "godot_tools.editor_path": "C:\\Program Files\\Godot\\godot.exe",
+    "godot_tools.gdscript_lsp_server_host": "127.0.0.1",
+    "godot_tools.gdscript_lsp_server_port": 6008,
+    "files.associations": {
+        "*.gd": "gdscript",
+        "*.cs": "csharp",
+        "*.tscn": "xml",
+        "*.tres": "ini",
+        "*.cfg": "ini",
+        "*.import": "ini"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+    "[gdscript]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false,
+        "editor.wordWrap": "on",
+        "editor.rulers": [80, 120]
+    },
+    "gdscript.lsp.enabled": true,
+    "gdscript.lsp.headless": false,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "godot.lsp.server_host": "127.0.0.1",
+    "godot.lsp.server_port": 6008,
+    "debug.console.fontSize": 14,
+    "debug.console.wordWrap": false,
+    "problems.showCurrentInStatus": true,
+    "problems.sortOrder": "severity"
+} 

@@ -1,0 +1,143 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjv8qx5pqxj5v"]
+
+[ext_resource type="Script" path="res://scripts/GameWorld.gd" id="1_x4k8p"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/background.png" id="2_cave_bg"]
+
+[node name="GameWorld" type="Node2D"]
+script = ExtResource("1_x4k8p")
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="GameHUD" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopPanel" type="Panel" parent="UILayer/GameHUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_bottom = 60.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UILayer/GameHUD/TopPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="LevelInfo" type="Label" parent="UILayer/GameHUD/TopPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Level 1: Cavern Depths"
+vertical_alignment = 1
+
+[node name="PlayerCount" type="Label" parent="UILayer/GameHUD/TopPanel/HBoxContainer"]
+layout_mode = 2
+text = "Players: 1/4"
+vertical_alignment = 1
+
+[node name="RunTime" type="Label" parent="UILayer/GameHUD/TopPanel/HBoxContainer"]
+layout_mode = 2
+text = "Time: 00:00"
+vertical_alignment = 1
+
+[node name="DebugPanel" type="Panel" parent="UILayer/GameHUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -200.0
+offset_top = 70.0
+offset_right = -10.0
+offset_bottom = 300.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UILayer/GameHUD/DebugPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="DebugLabel" type="Label" parent="UILayer/GameHUD/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "Debug Panel"
+horizontal_alignment = 1
+
+[node name="TestButton" type="Button" parent="UILayer/GameHUD/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "Test Network"
+
+[node name="AddXPButton" type="Button" parent="UILayer/GameHUD/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "Add XP"
+
+[node name="SpawnEnemyButton" type="Button" parent="UILayer/GameHUD/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "Spawn Enemy"
+
+[node name="NextLevelButton" type="Button" parent="UILayer/GameHUD/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "Next Level"
+
+[node name="MainMenuButton" type="Button" parent="UILayer/GameHUD/DebugPanel/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="GameWorld" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="GameWorld"]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.1, 0.1, 0.2, 1.0)
+z_index = -10
+
+[node name="PlayerSpawnPoints" type="Node2D" parent="GameWorld"]
+
+[node name="PlayerSpawn1" type="Marker2D" parent="GameWorld/PlayerSpawnPoints"]
+position = Vector2(100, 300)
+
+[node name="PlayerSpawn2" type="Marker2D" parent="GameWorld/PlayerSpawnPoints"]
+position = Vector2(150, 300)
+
+[node name="PlayerSpawn3" type="Marker2D" parent="GameWorld/PlayerSpawnPoints"]
+position = Vector2(100, 350)
+
+[node name="PlayerSpawn4" type="Marker2D" parent="GameWorld/PlayerSpawnPoints"]
+position = Vector2(150, 350)
+
+[node name="EnemySpawnPoints" type="Node2D" parent="GameWorld"]
+
+[node name="EnemySpawn1" type="Marker2D" parent="GameWorld/EnemySpawnPoints"]
+position = Vector2(500, 300)
+
+[node name="EnemySpawn2" type="Marker2D" parent="GameWorld/EnemySpawnPoints"]
+position = Vector2(600, 400)
+
+[node name="EnemySpawn3" type="Marker2D" parent="GameWorld/EnemySpawnPoints"]
+position = Vector2(700, 200)
+
+[node name="Players" type="Node2D" parent="GameWorld"]
+
+[node name="Enemies" type="Node2D" parent="GameWorld"]
+
+[node name="Projectiles" type="Node2D" parent="GameWorld"]
+
+[node name="Pickups" type="Node2D" parent="GameWorld"]
+
+[connection signal="pressed" from="UILayer/GameHUD/DebugPanel/VBoxContainer/TestButton" to="." method="_on_test_button_pressed"]
+[connection signal="pressed" from="UILayer/GameHUD/DebugPanel/VBoxContainer/AddXPButton" to="." method="_on_add_xp_button_pressed"]
+[connection signal="pressed" from="UILayer/GameHUD/DebugPanel/VBoxContainer/SpawnEnemyButton" to="." method="_on_spawn_enemy_button_pressed"]
+[connection signal="pressed" from="UILayer/GameHUD/DebugPanel/VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="UILayer/GameHUD/DebugPanel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"] 

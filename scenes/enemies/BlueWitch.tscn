@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx7cldhjk5gtq"]
+
+[ext_resource type="Script" path="res://scripts/enemies/BlueWitch.gd" id="1_boss_script"]
+[ext_resource type="Texture2D" path="res://assets/enemies/witch_boss/Blue_witch/B_witch_idle.png" id="2_witch_texture"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(32, 32)
+
+[node name="BlueWitch" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_boss_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_witch_texture")
+hframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="DetectionShape" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="AttackShape" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = -35.0
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StatusEffects" type="Node" parent="."] 

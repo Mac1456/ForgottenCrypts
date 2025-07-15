@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://d8vqcfmno4kp"]
+
+[ext_resource type="Script" path="res://scripts/projectiles/Meteor.gd" id="1_meteor"]
+
+[node name="Meteor" type="RigidBody2D"]
+script = ExtResource("1_meteor")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.2, 0.1, 1)
+scale = Vector2(0.8, 0.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="AreaCollision" type="CollisionShape2D" parent="Area2D"]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_visibility_notifier_2d_screen_exited"] 

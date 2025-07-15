@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Godot Game",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "port": 6007,
+            "address": "127.0.0.1",
+            "launch_game_instance": true,
+            "launch_scene": false
+        },
+        {
+            "name": "Launch Godot Editor",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "port": 6007,
+            "address": "127.0.0.1",
+            "launch_game_instance": false,
+            "launch_scene": false
+        },
+        {
+            "name": "Launch Test Scene",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "port": 6007,
+            "address": "127.0.0.1",
+            "launch_game_instance": true,
+            "launch_scene": true,
+            "scene": "res://test_basic_functionality.gd"
+        }
+    ]
+} 

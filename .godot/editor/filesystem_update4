@@ -1,0 +1,10 @@
+res://scenes/MainMenu.tscn
+res://scripts/LevelGenerator.gd
+res://scripts/levels/GameLevel.gd
+res://scripts/ProgressionManager.gd
+res://scripts/MainMenu.gd
+res://scripts/AudioManager.gd
+res://minimal_test.tscn
+res://scenes/characters/Player.tscn
+res://scripts/GameWorld.gd
+res://scripts/characters/Player.gd

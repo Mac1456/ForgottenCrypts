@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvqe8xkf5p2hr"]
+
+[ext_resource type="PackedScene" uid="uid://c3f5qw8j4x2vr" path="res://scenes/enemies/Enemy.tscn" id="1_1k4mh"]
+[ext_resource type="Script" path="res://scripts/enemies/SkeletonGrunt.gd" id="2_3f8hj"]
+
+[node name="SkeletonGrunt" instance=ExtResource("1_1k4mh")]
+script = ExtResource("2_3f8hj")
+
+[node name="Sprite2D" parent="." index="0"]
+frame = 56 

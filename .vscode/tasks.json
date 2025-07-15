@@ -1,0 +1,91 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Godot Game",
+            "type": "shell",
+            "command": "godot",
+            "args": [
+                "--path",
+                "${workspaceFolder}",
+                "--debug"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Godot Headless Test",
+            "type": "shell",
+            "command": "godot",
+            "args": [
+                "--path",
+                "${workspaceFolder}",
+                "--headless",
+                "--script",
+                "test_basic_functionality.gd",
+                "--quit"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Export Godot Project",
+            "type": "shell",
+            "command": "godot",
+            "args": [
+                "--path",
+                "${workspaceFolder}",
+                "--export",
+                "Windows Desktop",
+                "./build/ForgottenCrypts.exe"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Validate Godot Project",
+            "type": "shell",
+            "command": "godot",
+            "args": [
+                "--path",
+                "${workspaceFolder}",
+                "--check-only",
+                "--quit"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        }
+    ]
+} 
