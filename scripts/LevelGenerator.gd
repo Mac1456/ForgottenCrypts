@@ -67,7 +67,7 @@ func _ready():
 
 # Generate a complete level
 func generate_level(level_type: LevelType, seed_value: int = -1) -> TileMap:
-	print("Generating level of type: ", LevelType.keys()[level_type])
+	print("Generating level of type: ", LevelType.find_key(level_type))
 	
 	# Set random seed for reproducible levels
 	if seed_value != -1:

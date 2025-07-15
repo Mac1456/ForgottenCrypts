@@ -473,4 +473,4 @@ func initialize_player(id: int, name: String, char_type: ProgressionManager.Char
 	print("Updating health bar...")
 	update_health_bar()
 	
-	print("Player initialization complete for: ", player_name, " (", ProgressionManager.CharacterType.keys()[character_type], ")")
+	print("Player initialization complete for: ", player_name, " (", ProgressionManager.CharacterType.find_key(character_type), ")")

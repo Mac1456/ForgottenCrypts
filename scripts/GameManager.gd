@@ -113,7 +113,7 @@ func start_new_run():
 	run_start_time = Time.get_ticks_msec()
 	is_in_rest_area = false
 	
-	print("Run parameters set - Level: ", current_level, ", Type: ", LevelType.keys()[current_level_type])
+	print("Run parameters set - Level: ", current_level, ", Type: ", LevelType.find_key(current_level_type))
 	
 	# Reset run statistics
 	run_stats = {
@@ -162,7 +162,7 @@ func advance_to_level(level: int):
 	var level_info = level_progression[level]
 	current_level_type = level_info["type"]
 	
-	print("Level advanced - Current: ", current_level, ", Type: ", LevelType.keys()[current_level_type])
+	print("Level advanced - Current: ", current_level, ", Type: ", LevelType.find_key(current_level_type))
 	print("Level info: ", level_info)
 	
 	level_changed.emit(level, level_info)

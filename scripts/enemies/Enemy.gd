@@ -252,7 +252,7 @@ func change_state(new_state: EnemyState):
 	if current_state == new_state:
 		return
 	
-	print("Enemy ", enemy_name, " changing state: ", EnemyState.keys()[current_state], " -> ", EnemyState.keys()[new_state])
+	print("Enemy ", enemy_name, " changing state: ", EnemyState.find_key(current_state), " -> ", EnemyState.find_key(new_state))
 	
 	# Exit current state
 	match current_state:
@@ -511,7 +511,7 @@ func _on_stun_timer_timeout():
 
 # Utility functions
 func get_state_name() -> String:
-	return EnemyState.keys()[current_state]
+	return EnemyState.find_key(current_state)
 
 func get_distance_to_spawn() -> float:
 	return global_position.distance_to(spawn_position)

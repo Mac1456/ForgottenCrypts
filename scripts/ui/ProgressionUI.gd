@@ -84,7 +84,7 @@ func _on_character_selected(character_type: ProgressionManager.CharacterType):
 	# Update character details
 	_update_character_details()
 	
-	print("Character selected: ", ProgressionManager.CharacterType.keys()[character_type])
+	print("Character selected: ", ProgressionManager.CharacterType.find_key(character_type))
 
 func _on_upgrade_purchased(upgrade_type: String):
 	var character_data = ProgressionManager.get_character_data(selected_character)
@@ -237,24 +237,24 @@ func _is_upgrade_maxed(upgrade_type: String) -> bool:
 
 # Signal handlers
 func _on_experience_gained(character_type: ProgressionManager.CharacterType, amount: int):
-	print("Experience gained: ", ProgressionManager.CharacterType.keys()[character_type], " +", amount)
+	print("Experience gained: ", ProgressionManager.CharacterType.find_key(character_type), " +", amount)
 	if character_type == selected_character:
 		_update_character_details()
 	_update_character_button_text()
 
 func _on_level_up(character_type: ProgressionManager.CharacterType, new_level: int):
-	print("Level up: ", ProgressionManager.CharacterType.keys()[character_type], " -> Level ", new_level)
+	print("Level up: ", ProgressionManager.CharacterType.find_key(character_type), " -> Level ", new_level)
 	if character_type == selected_character:
 		_update_character_details()
 	_update_character_button_text()
 
 func _on_skill_point_gained(character_type: ProgressionManager.CharacterType, points: int):
-	print("Skill points gained: ", ProgressionManager.CharacterType.keys()[character_type], " +", points)
+	print("Skill points gained: ", ProgressionManager.CharacterType.find_key(character_type), " +", points)
 	if character_type == selected_character:
 		_update_character_details()
 
 func _on_upgrade_applied(character_type: ProgressionManager.CharacterType, upgrade_type: String):
-	print("Upgrade applied: ", ProgressionManager.CharacterType.keys()[character_type], " - ", upgrade_type)
+	print("Upgrade applied: ", ProgressionManager.CharacterType.find_key(character_type), " - ", upgrade_type)
 	if character_type == selected_character:
 		_update_character_details()
 

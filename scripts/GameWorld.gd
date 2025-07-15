@@ -393,7 +393,7 @@ func spawn_player(player_id: int, player_data: Dictionary, spawn_point: Node2D) 
 			push_error("Unknown character type: ", character_type_str, " for player: ", player_id)
 			character_type = ProgressionManager.CharacterType.WIZARD
 	
-	print("Character type determined: ", ProgressionManager.CharacterType.keys()[character_type])
+	print("Character type determined: ", ProgressionManager.CharacterType.find_key(character_type))
 	
 	# Determine which character class to use
 	var character_script = _get_character_script(character_type)
