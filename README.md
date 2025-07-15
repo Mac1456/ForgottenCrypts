@@ -1,3 +1,5 @@
+# ForgottenCrypts
+
 # Crypts of the Forgotten
 
 A top-down 2D multiplayer dungeon crawler built in Godot 4.4.1 using GDScript. This project is part of the Game Week challenge - building a polished, production-quality multiplayer game in 7 days using AI-accelerated development.
@@ -100,6 +102,24 @@ Players explore through **7 progressively difficult levels**, each ending with a
 - **Environmental Variety**: Engaging visual differences without affecting difficulty
 
 Each run features escalating difficulty with better upgrades/abilities as rewards.
+
+## Character System
+
+**4 Diverse Archetypes** (balanced but unique):
+- Characters designed around available sprite themes
+- Each has 2 unique combat abilities + dash/dodge
+- Third ability unlocked through progression
+- Character-specific upgrade trees
+- Balanced through enemy design (some enemies harder for certain characters)
+
+## Enemy Design
+
+**Variety & Progression**:
+- Multiple skeleton types (grunt, archer, guard, bomber)
+- Additional enemies from available asset packs
+- Elite variants of standard enemies
+- Witch mini-bosses (levels 3-4)
+- Final witch boss with minion spawning + phase system
 
 ## Progression Systems
 
